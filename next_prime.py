@@ -20,26 +20,30 @@ def is_prime(num):
 
 # generator for prime numbers
 def gen_primes():
-    yield 2
     n = 3
     while(True):
         if is_prime(n):
             yield n
         n += 2
 
+# something here is broken as shit
+# can't get it to give me just one next prime, enters an endless loop
+# if I set it up where pressing enter gies the next number, then the break doesn't work
 
-def main():
-    more = "y"
+
+def gimme():
     generator = gen_primes()
-    while more[0].lower == "y":
-        print("The next prime number is ", generator.next(),".\n")
-        more = input("Would you like to see the next prime number? (Y/N): ")
-
-
+    print("Press Enter to see the next prime number or N to quit.")
     
+    while True:
+
+        response = input()
+
+        if response.lower() == 'n':
+            break
+        else:
+            print(generator.__next__())
+
 if __name__ == '__main__':
-    main()
-
-
+    gimme()
     
-
