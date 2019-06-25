@@ -26,7 +26,7 @@ def gen_primes():
             yield n
         n += 2
 
-# something here is broken as shit
+# something here is broken 
 # can't get it to give me just one next prime, enters an endless loop
 # if I set it up where pressing enter gies the next number, then the break doesn't work
 
